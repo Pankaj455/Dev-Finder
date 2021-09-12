@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+.container{
+    width: 50%;
+    max-width: 1400px;
+    height: 500px;
+    /* border: 2px solid #fff; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+    padding: 0.8em 0 1em 0;
+}
+header h1{
+    letter-spacing: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-box{
+    /* border: 1.5px solid whitesmoke; */
+    border-radius: 12px;
+    background: #1c203d;
+    padding: 6px 8px;
+    margin-bottom: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.search-box::before{
+    content: '\f002';
+    position: absolute;
+    font-family: 'FontAwesome';
+    left: 15px;
+    font-size: 20px;
+    color: #3434a0;
 }
 
-.App-link {
-  color: #61dafb;
+.search-box input{
+    flex-grow: 1;
+    outline: none;
+    background: none;
+    border: none;
+    font-size: 18px;
+    width: 50%;
+    padding: 0.6em 1em 0.6em 2em;
+    letter-spacing: 1px;
+    background: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.search-box input::placeholder{
+    color: rgb(202, 190, 190);
+    letter-spacing: 2px;
+}
+
+.search-btn{
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 0.6em;
+    background: #3333d4;
+    padding: 0.6em 1em;
+    cursor: pointer;
+}
+
+.search-btn:hover,
+.search-btn:focus
+{
+    background: #5555df;
+}
+.search-btn:active{
+    background: #3333d4;
+}
+
+.user-container{
+    /* border: 2px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    padding: 1.125em;
+    border-radius: 12px;
+}
+
+.user-container, .user-container *{
+    background: #1c203d;
+}
+
+
+.profile{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.3em 0;
+}
+
+.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #13162c;
+    position: relative;
+}
+
+img{
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+.username{
+    margin-top: 0.6em;
+    margin-left: 1.25em;
+}
+
+.username h2{
+    font-size: 28px;
+    margin-bottom: 0.17em;
+    letter-spacing: 2px;
+}
+p{
+    letter-spacing: 1px;
+}
+
+.bio{
+    font-size: 18px;
+    margin: 0.4em 0;
+    line-height: 1.3em;
+}
+
+.repo-info{
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0; 
+}
+
+.repo-info, .repo-info *{
+    background: #13162c;
+}
+
+.cols{
+    /* border: 1px solid #fff; */
+    flex-grow: 1;
+    flex-basis: 80px;
+    padding: 10px 20px;
+}
+
+.cols label{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.more-info{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+.location::before{
+    content: '\f041';
+    font-family: 'FontAwesome';
+    margin-right: 1.2em;
+}
+
+.url::before{
+    content: '\f0c1';
+    font-family: 'FontAwesome';
+    margin-right: 0.8em;
+}
+.twitter::before{
+    content: '\f099';
+    font-family: 'FontAwesome';
+    margin-right: 0.8em;
+}
+
+.unavailable{
+    color: #ffffff93;
+}
+
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
 }
