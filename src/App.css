@@ -13,7 +13,7 @@ header h1{
 
 .search-box{
     border-radius: 0.75em;
-    background: #1c203d;
+    background: #252947;
     padding: 0.375em 0.5em;
     margin-bottom: 0.8em;
     display: flex;
@@ -75,7 +75,7 @@ header h1{
 }
 
 .user-container, .user-container *{
-    background: #1c203d;
+    background: #252947;
 }
 
 
