@@ -16,4 +16,4 @@
 ![search-box](https://github.com/Pankaj455/dev-finder/blob/main/screenshots/search-box.png)
 ![search-result](https://github.com/Pankaj455/dev-finder/blob/main/screenshots/search-result.png)
 
-You can test this application at [devfinder](https://devgfinder.netlify.app/)
+#### You can also test [this](https://devgfinder.netlify.app/) application
