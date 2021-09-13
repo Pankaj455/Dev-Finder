@@ -1,22 +1,20 @@
 .container{
-    width: 50%;
-    max-width: 1400px;
+    flex-grow: 1;
+    max-width: 700px;
     height: 500px;
-    /* border: 2px solid #fff; */
 }
 
 header{
     padding: 0 0 1em 0;
 }
 header h1{
-    letter-spacing: 2px;
+    letter-spacing: 0.06em;
 }
 
 .search-box{
-    /* border: 1.5px solid whitesmoke; */
-    border-radius: 12px;
+    border-radius: 0.75em;
     background: #1c203d;
-    padding: 6px 8px;
+    padding: 0.375em 0.5em;
     margin-bottom: 0.8em;
     display: flex;
     justify-content: space-between;
@@ -28,8 +26,8 @@ header h1{
     content: '\f002';
     position: absolute;
     font-family: 'FontAwesome';
-    left: 15px;
     font-size: 20px;
+    left: 0.75em;
     color: #3434a0;
 }
 
@@ -39,16 +37,15 @@ header h1{
     background: none;
     border: none;
     font-size: 18px;
-    width: 50%;
     padding: 0.6em 1em 0.6em 2em;
-    letter-spacing: 1px;
+    letter-spacing: 0.055em;
     background: none;
 }
 
 
 .search-box input::placeholder{
     color: rgb(202, 190, 190);
-    letter-spacing: 2px;
+    letter-spacing: 0.125em;
 }
 
 .search-btn{
@@ -71,11 +68,10 @@ header h1{
 }
 
 .user-container{
-    /* border: 2px solid yellow; */
     display: flex;
     flex-direction: column;
     padding: 1.125em;
-    border-radius: 12px;
+    border-radius: 0.75em;
 }
 
 .user-container, .user-container *{
@@ -101,7 +97,7 @@ img{
     position: absolute;
     border-radius: 50%;
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .username{
@@ -112,10 +108,10 @@ img{
 .username h2{
     font-size: 28px;
     margin-bottom: 0.17em;
-    letter-spacing: 2px;
+    letter-spacing: 0.07em;
 }
 p{
-    letter-spacing: 1px;
+    letter-spacing: 0.06em;
 }
 
 .bio{
@@ -125,13 +121,13 @@ p{
 }
 
 .repo-info{
-    border-radius: 12px;
+    border-radius: 0.75em;
     overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 20px 0; 
+    margin: 1.25em 0; 
 }
 
 .repo-info, .repo-info *{
@@ -139,20 +135,19 @@ p{
 }
 
 .cols{
-    /* border: 1px solid #fff; */
     flex-grow: 1;
     flex-basis: 80px;
-    padding: 10px 20px;
+    padding: 0.6em 1.25em;
 }
 
 .cols label{
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0.5em;
 }
 
 .more-info{
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 0.55em;
 }
 
 
@@ -182,4 +177,35 @@ a{
 }
 a:hover{
     text-decoration: underline;
+}
+
+@media (max-width: 620px){
+    #root{
+        padding: 0 0.5em;
+    }
+}
+
+@media (max-width: 378px){
+    .search-box input,
+    .search-box input::placeholder,
+    .search-btn{
+        font-size: 15px;
+    }
+
+    .profile-img{
+        width: 75px;
+        height: 75px;
+    }
+
+    .username h2{
+        font-size: 24px;
+    }
+
+    p{
+        font-size: 14px;
+    }
+
+    .more-info{
+        font-size: 15px;
+    }
 }
