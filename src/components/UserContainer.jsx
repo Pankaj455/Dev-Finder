@@ -53,8 +53,8 @@ export default function UserContainer({user}){
 
                 <p className="more-info location">{user.location || <span className="unavailable">Not Available</span>}</p>
                 <p className="more-info url">
-                    {user.html_url ? 
-                    <a href={`https://github.com/${user.login}`} rel="noreferrer" target="_blank">{user.html_url}</a> 
+                    {user.html_url ?
+                    <a href={user.html_url} rel="noreferrer" target="_blank">{user.html_url}</a> 
                     : <span className="unavailable">Not Available</span>}
                 </p>
                 <p className="more-info twitter">
