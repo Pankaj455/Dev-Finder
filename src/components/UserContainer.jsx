@@ -62,6 +62,11 @@ export default function UserContainer({user}){
                     <a href={`https://twitter.com/${user.twitter_username}`} rel="noreferrer" target="_blank">{`@${user.twitter_username}`}</a> 
                     : <span className="unavailable">Not Available</span>}
                 </p>
+                <p className="more-info url">
+                    {user.blog ? 
+                    <a href={user.blog} rel="noreferrer" target="_blank">{user.blog}</a> 
+                    : <span className="unavailable">Not Available</span>}
+                </p>
                 </>
                 :   <span>No User...</span>
         }
