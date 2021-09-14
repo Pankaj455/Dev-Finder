@@ -7,7 +7,7 @@
 * Number of repositories of the user
 * Number of followers
 * Number of users the user is following
-* City
+* City/Country
 * User's Github Link
 * User's Twitter Link
 * User's Website Link
