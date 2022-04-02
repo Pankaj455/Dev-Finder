@@ -1,6 +1,6 @@
 # Dev-Finder
 
-### This is a simple github users search app which will show the following:
+### This is a github users search app which will show the following:
 * User's name
 * User's github joining date
 * User's bio
