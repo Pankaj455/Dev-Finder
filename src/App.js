@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Header from "./components/Header";
 import SearchBox from "./components/SearchBox";
-import { LineWave } from "react-loader-spinner";
+import { MutatingDots } from "react-loader-spinner";
 import UserContainer from "./components/UserContainer";
 
 export default function App() {
@@ -48,12 +48,13 @@ export default function App() {
 
       <div className="user-container-wrapper">
         {loaded ? (
-          <LineWave
+          <MutatingDots
             wrapperStyle={{ height: "250px", alignItems: "center" }}
             color="#3333d4"
-            height={110}
-            width={110}
-            ariaLabel="three-circles-rotating"
+            secondaryColor="#6666d4"
+            height={100}
+            width={100}
+            ariaLabel="loading-indicator"
           />
         ) : user !== null ? (
           <UserContainer user={user} />
