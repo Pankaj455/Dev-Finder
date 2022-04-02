@@ -3,16 +3,21 @@ import {useState} from 'react'
 export default function SearchBox({setUser}){
     const [input, setInput] = useState('')
 
-    async function getUserData(e){
+    function getUserData(e){
         e.preventDefault()
         if(input.trim().length === 0)   return 
-        const response = await fetch(`https://api.github.com/users/${input.trim()}`)
-        if(response.status === 200){
-            const data = await response.json()
-            setUser(data)
-            return
-        }
-        setUser({})
+        fetch(`https://api.github.com/users/${input.trim()}`)
+            .then(response => {
+                if(response.status === 200)
+                    return response.json()
+                setUser({})
+            })
+            .then(data => {
+                setUser(data)
+            })
+            .catch(error => {
+                console.log(`Error: ${error}`);
+            })
     }
     return(
         <form className="search-box" onSubmit={getUserData}>
