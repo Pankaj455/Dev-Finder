@@ -14,11 +14,11 @@ const months = [
     "December"
 ]
 export default function UserContainer({user}){
-    let date = Object.keys(user).length && user.created_at.split("-")
+    let date = user && Object.keys(user).length && user.created_at.split("-")
     return(
         <div className="user-container">
         {
-            Object.keys(user).length ?
+            user && Object.keys(user).length ?
                 <>
                 <div className="profile">
                     <div className="profile-img">
