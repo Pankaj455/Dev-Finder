@@ -1,14 +1,32 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import SearchBox from "./components/SearchBox";
 import { MutatingDots } from "react-loader-spinner";
 import UserContainer from "./components/UserContainer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   const [user, setUser] = useState(null);
   const [input, setInput] = useState("");
   const [loaded, setLoaded] = useState(false);
+  const [isConnected, setIsConnected] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("online", handleConnectionChange);
+    window.addEventListener("offline", handleConnectionChange);
+
+    return () => {
+      window.removeEventListener("online", handleConnectionChange);
+      window.removeEventListener("offline", handleConnectionChange);
+    };
+  }, []);
+
+  function handleConnectionChange() {
+    if (navigator.onLine) setIsConnected(true);
+    else setIsConnected(false);
+  }
 
   function getUserData(e) {
     e.preventDefault();
@@ -26,6 +44,7 @@ export default function App() {
       })
       .catch((error) => {
         console.log(`Error: ${error}`);
+        toast.error("Something went wrong...");
         setLoaded(false);
         setUser({});
       });
@@ -33,6 +52,16 @@ export default function App() {
 
   return (
     <div className="container">
+      <ToastContainer
+        position="top-right"
+        autoClose={2500}
+        hideProgressBar={true}
+        limit={1}
+        closeOnClick
+        pauseOnHover
+        toastClassName={() => "toast-wrapper"}
+        style={{ background: "transparent" }}
+      />
       <Header />
       <form className="search-box" onSubmit={getUserData}>
         <input

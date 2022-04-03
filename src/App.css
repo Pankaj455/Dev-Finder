@@ -184,6 +184,27 @@ a:hover {
   text-decoration: underline;
 }
 
+.toast-wrapper{
+  background: #3333d4;
+  display: flex;
+  padding: 0.2em;
+}
+.Toastify__toast-body {
+  background-color: #3333d4;
+}
+.Toastify__toast-body div:nth-child(2){
+  background-color: #3333d4;
+}
+.Toastify__toast-icon{
+  background: transparent;
+}
+.Toastify__toast-icon svg{
+  background: transparent;
+}
+.Toastify__close-button > svg {
+  background: transparent;
+}
+
 @media (max-width: 620px) {
   #root {
     padding: 0 0.5em;
