@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import Header from "./components/Header";
-import { MutatingDots } from "react-loader-spinner";
+import Notifier from "./components/Notifier";
+import Loader from "./components/Loader";
 import UserContainer from "./components/UserContainer";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
@@ -26,7 +26,6 @@ export default function App() {
         setUser(data);
       })
       .catch((error) => {
-        console.log(`Error: ${error}`);
         toast.error("Something went wrong...");
         setLoaded(false);
         setUser({});
@@ -35,17 +34,8 @@ export default function App() {
 
   return (
     <div className="container">
-      <ToastContainer
-        position="top-right"
-        autoClose={2500}
-        hideProgressBar={true}
-        limit={1}
-        closeOnClick
-        pauseOnHover
-        toastClassName={() => "toast-wrapper"}
-        style={{ background: "transparent" }}
-      />
-      <Header />
+      <Notifier />
+      <h1>devfinder</h1>
       <form className="search-box" onSubmit={getUserData}>
         <input
           type="text"
@@ -65,14 +55,7 @@ export default function App() {
 
       <div className="user-container-wrapper">
         {loaded ? (
-          <MutatingDots
-            wrapperStyle={{ height: "250px", alignItems: "center" }}
-            color="#3333d4"
-            secondaryColor="#6666d4"
-            height={100}
-            width={100}
-            ariaLabel="loading-indicator"
-          />
+          <Loader />
         ) : user !== null ? (
           <UserContainer user={user} />
         ) : null}

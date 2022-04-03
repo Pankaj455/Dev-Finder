@@ -4,11 +4,9 @@
   height: 500px;
 }
 
-header {
-  padding: 0 0 1em 0;
-}
-header h1 {
+h1 {
   letter-spacing: 0.06em;
+  margin-bottom: 0.6em;
 }
 
 .search-box {

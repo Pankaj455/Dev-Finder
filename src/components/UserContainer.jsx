@@ -25,7 +25,7 @@ export default function UserContainer({user}){
                     <img src={user.avatar_url} alt="Profile" />
                     </div>
                     <div className="username">
-                        <h2>{user.name}</h2>
+                        <h2>{user.name || <span className="unavailable">Github User</span>}</h2>
                         <p>Joined {`${date[2].slice(0, date[2].indexOf('T'))} ${months[parseInt(date[1])]} ${date[0]}`}</p>
                     </div>
                 </div>
