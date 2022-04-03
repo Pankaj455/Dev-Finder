@@ -1,7 +1,6 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Header from "./components/Header";
-import SearchBox from "./components/SearchBox";
 import { MutatingDots } from "react-loader-spinner";
 import UserContainer from "./components/UserContainer";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,22 +10,6 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [input, setInput] = useState("");
   const [loaded, setLoaded] = useState(false);
-  const [isConnected, setIsConnected] = useState(true);
-
-  useEffect(() => {
-    window.addEventListener("online", handleConnectionChange);
-    window.addEventListener("offline", handleConnectionChange);
-
-    return () => {
-      window.removeEventListener("online", handleConnectionChange);
-      window.removeEventListener("offline", handleConnectionChange);
-    };
-  }, []);
-
-  function handleConnectionChange() {
-    if (navigator.onLine) setIsConnected(true);
-    else setIsConnected(false);
-  }
 
   function getUserData(e) {
     e.preventDefault();
@@ -70,7 +53,12 @@ export default function App() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button className="search-btn" disabled={loaded}>
+        <span
+          className="close-btn"
+          style={{ display: !input.length && "none" }}
+          onClick={() => setInput("")}
+        ></span>
+        <button type="submit" className="search-btn" disabled={loaded}>
           {loaded ? "..." : "search"}
         </button>
       </form>

@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: #13162c;
     font-family: 'Glory', sans-serif;
     color: #fff;
 }
@@ -13,6 +12,7 @@ body{
     min-height: 100vh;
     width: 100%;
     display: flex;
+    background: #13162c;
 }
 
 #root{
